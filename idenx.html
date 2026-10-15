@@ -1,65 +1,367 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test NEO PIR</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <style>
-        .card {
-            margin-bottom: 20px;
-        }
-        .card-body {
-            padding: 20px;
-        }
-        .card-title {
-            margin-bottom: 20px;
-        }
-        .container {
-            margin-top: 50px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Información Personal</h2>
-                <div class="form-group">
-                    <label for="nombre">Nombre:</label>
-                    <input type="text" class="form-control" id="nombre" placeholder="Nombre" name="nombre">
-                </div>
-                <div class="form-group">
-                    <label for="genero">Género:</label>
-                    <select class="form-control" id="genero" name="genero">
-                        <option value="M">Masculino</option>
-                        <option value="F">Femenino</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="edad">Edad:</label>
-                    <input type="number" class="form-control" id="edad" placeholder="Edad" name="edad">
-                </div>
-                <div class="form-group">
-                    <label for="estadoCivil">Estado Civil:</label>
-                    <select class="form-control" id="estadoCivil" name="estadoCivil">
-                        <option value="S">Soltero/a</option>
-                        <option value="C">Casado/a</option>
-                        <option value="V">Viudo/a</option>
-                        <option value="D">Divorciado/a</option>
-                    </select>
-                </div>
-            </div>
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f5f6f2" />
+    <meta
+      name="description"
+      content="Información sobre el modelo NEO PI-R y el estado de disponibilidad de su versión digital."
+    />
+    <title>NEO PI-R | Evaluación de personalidad</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="questions.js" defer></script>
+    <script src="scoring.js" defer></script>
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#contenido">Ir al contenido</a>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="NEO PI-R, inicio">
+        <span class="brand-mark" aria-hidden="true"
+          ><span></span><span></span><span></span
+        ></span>
+        <span>NEO <span class="brand-light">PI-R</span></span>
+      </a>
+      <button
+        class="menu-toggle"
+        type="button"
+        aria-expanded="false"
+        aria-controls="site-nav"
+        aria-label="Abrir menú"
+      >
+        <span></span><span></span>
+      </button>
+      <nav class="site-nav" id="site-nav" aria-label="Navegación principal">
+        <a href="#modelo">El modelo</a>
+        <a href="#uso">Uso responsable</a>
+        <a class="nav-status" href="#cuestionario"
+          ><span class="status-dot" aria-hidden="true"></span>Ir al cuestionario
+          <span aria-hidden="true">↗</span></a
+        >
+      </nav>
+    </header>
+
+    <main id="contenido">
+      <section class="hero page-width" id="inicio" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <p class="eyebrow">
+            <span class="eyebrow-rule" aria-hidden="true"></span>Evaluación de
+            personalidad
+          </p>
+          <h1 id="hero-title">
+            Una mirada más profunda a la <em>personalidad.</em>
+          </h1>
+          <p class="hero-description">
+            El NEO PI-R organiza la exploración de la personalidad en cinco
+            grandes dimensiones. Una herramienta para el contexto profesional,
+            aplicada e interpretada con criterio.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#cuestionario"
+              >Comenzar cuestionario <span aria-hidden="true">↗</span></a
+            >
+            <a class="text-link" href="#modelo"
+              >Conocer el modelo <span aria-hidden="true">↓</span></a
+            >
+          </div>
+          <p class="availability-note">
+            <span class="status-dot" aria-hidden="true"></span>240 afirmaciones
+            · Tus respuestas no se envían.
+          </p>
         </div>
-        <div class="card">
-            <div class="card-body">
-                <h2 class="card-title">Test NEO PIR</h2>
-                <!-- Aquí van las preguntas del test NEO PIR -->
+
+        <aside
+          class="model-visual"
+          aria-label="Las cinco dimensiones del modelo"
+        >
+          <div class="visual-topline">
+            <span>MODELO DE LOS CINCO FACTORES</span
+            ><span class="visual-index">01 / 05</span>
+          </div>
+          <div class="visual-heading">
+            <span class="visual-kicker">NEO PI-R</span>
+            <h2>Cinco dimensiones.<br />Una visión amplia.</h2>
+          </div>
+          <ol class="dimension-list">
+            <li>
+              <span class="dimension-number">01</span
+              ><span class="dimension-name">Neuroticismo</span
+              ><span
+                class="dimension-marker marker-coral"
+                aria-hidden="true"
+              ></span>
+            </li>
+            <li>
+              <span class="dimension-number">02</span
+              ><span class="dimension-name">Extraversión</span
+              ><span
+                class="dimension-marker marker-yellow"
+                aria-hidden="true"
+              ></span>
+            </li>
+            <li>
+              <span class="dimension-number">03</span
+              ><span class="dimension-name">Apertura</span
+              ><span
+                class="dimension-marker marker-blue"
+                aria-hidden="true"
+              ></span>
+            </li>
+            <li>
+              <span class="dimension-number">04</span
+              ><span class="dimension-name">Amabilidad</span
+              ><span
+                class="dimension-marker marker-green"
+                aria-hidden="true"
+              ></span>
+            </li>
+            <li>
+              <span class="dimension-number">05</span
+              ><span class="dimension-name">Responsabilidad</span
+              ><span
+                class="dimension-marker marker-lilac"
+                aria-hidden="true"
+              ></span>
+            </li>
+          </ol>
+          <div class="visual-foot">
+            <span class="visual-foot-mark" aria-hidden="true">N</span
+            ><span>Un perfil completo requiere una aplicación válida.</span>
+          </div>
+          <span class="visual-background-number" aria-hidden="true">05</span>
+        </aside>
+      </section>
+
+      <section
+        class="quiz-section"
+        id="cuestionario"
+        aria-labelledby="quiz-title"
+      >
+        <div class="quiz-shell">
+          <div class="quiz-heading">
+            <p class="eyebrow">
+              <span class="eyebrow-rule" aria-hidden="true"></span>Cuestionario
+            </p>
+            <h2 id="quiz-title">Responde a tu ritmo.</h2>
+            <p>
+              Lee cada afirmación y elige la opción que mejor te describa. No
+              hay respuestas correctas o incorrectas.
+            </p>
+          </div>
+          <div class="quiz-intro" id="quiz-intro">
+            <div>
+              <span class="intro-number">240</span>
+              <p>afirmaciones en total</p>
             </div>
+            <p class="privacy-note">
+              No pedimos datos personales. Las respuestas se mantienen en esta
+              pestaña y se borran al cerrarla.
+            </p>
+            <div class="quiz-actions">
+              <button class="primary-button" id="start-test" type="button">
+                Empezar <span aria-hidden="true">→</span>
+              </button>
+              <button class="secondary-button" id="show-demo" type="button">
+                Ver informe de ejemplo
+              </button>
+            </div>
+          </div>
+          <form class="quiz-form" id="quiz-form" hidden novalidate>
+            <div class="quiz-progress-header">
+              <span id="page-count">Bloque 1 de 24</span>
+              <span id="answer-count">0 de 240 respondidas</span>
+            </div>
+            <div
+              class="progress-track"
+              id="progress-track"
+              role="progressbar"
+              aria-label="Progreso del cuestionario"
+              aria-valuemin="0"
+              aria-valuemax="240"
+              aria-valuenow="0"
+            >
+              <span id="progress-fill"></span>
+            </div>
+            <div class="question-list" id="question-list"></div>
+            <p class="quiz-error" id="quiz-error" role="alert" hidden>
+              Responde las 10 afirmaciones de este bloque para continuar.
+            </p>
+            <div class="quiz-controls">
+              <button
+                class="secondary-button"
+                id="previous-page"
+                type="button"
+                disabled
+              >
+                <span aria-hidden="true">←</span> Anterior
+              </button>
+              <button class="primary-button" id="next-page" type="button">
+                Continuar <span aria-hidden="true">→</span>
+              </button>
+            </div>
+          </form>
+          <div class="quiz-complete" id="quiz-complete" tabindex="-1" hidden>
+            <span class="complete-mark" aria-hidden="true">✓</span>
+            <p class="demo-badge" id="demo-indicator" hidden>
+              EJEMPLO SIMULADO · DATOS FICTICIOS
+            </p>
+            <h3 id="report-title">Informe de resultados NEO PI-R</h3>
+            <p id="report-summary">
+              Cuestionario completado: 240 afirmaciones respondidas. Este perfil
+              presenta puntuaciones directas, sin baremos ni interpretación
+              diagnóstica.
+            </p>
+            <p class="report-meta">
+              Informe generado el <time id="report-date"></time>
+            </p>
+            <section class="radar-panel" aria-labelledby="radar-heading">
+              <div class="radar-header">
+                <div>
+                  <h4 id="radar-heading">Perfil general</h4>
+                  <p>Comparativa visual de las cinco dimensiones</p>
+                </div>
+                <span>Escala 0–192</span>
+              </div>
+              <div class="radar-content">
+                <svg
+                  class="radar-chart"
+                  viewBox="0 0 360 300"
+                  role="img"
+                  aria-labelledby="radar-title radar-description"
+                >
+                  <title id="radar-title">
+                    Gráfico radial de las cinco dimensiones
+                  </title>
+                  <desc id="radar-description">
+                    Puntuaciones directas representadas respecto al máximo
+                    posible de cada dimensión.
+                  </desc>
+                  <g class="radar-grid" aria-hidden="true">
+                    <polygon
+                      points="180,122 201.9,137.1 193.6,161.9 166.4,161.9 158.1,137.1"
+                    ></polygon>
+                    <polygon
+                      points="180,99 223.7,129.9 207.8,178.8 152.2,178.8 136.3,129.9"
+                    ></polygon>
+                    <polygon
+                      points="180,76 245.6,122.6 222.0,195.7 138.0,195.7 114.4,122.6"
+                    ></polygon>
+                    <polygon
+                      points="180,53 267.6,115.6 236.3,212.6 123.7,212.6 92.4,115.6"
+                    ></polygon>
+                    <line x1="180" y1="145" x2="180" y2="53"></line>
+                    <line x1="180" y1="145" x2="267.6" y2="115.6"></line>
+                    <line x1="180" y1="145" x2="236.3" y2="212.6"></line>
+                    <line x1="180" y1="145" x2="123.7" y2="212.6"></line>
+                    <line x1="180" y1="145" x2="92.4" y2="115.6"></line>
+                  </g>
+                  <polygon
+                    class="radar-area"
+                    id="radar-area"
+                    points="180,145 180,145 180,145 180,145 180,145"
+                  ></polygon>
+                  <g id="radar-markers"></g>
+                  <g class="radar-labels" aria-hidden="true">
+                    <text x="180" y="23" text-anchor="middle">
+                      Neuroticismo
+                    </text>
+                    <text x="275" y="105" text-anchor="start">
+                      Extraversión
+                    </text>
+                    <text x="247" y="238" text-anchor="start">Apertura</text>
+                    <text x="113" y="238" text-anchor="end">Amabilidad</text>
+                    <text x="85" y="105" text-anchor="end">
+                      Responsabilidad
+                    </text>
+                  </g>
+                </svg>
+                <ul
+                  class="radar-legend"
+                  id="radar-legend"
+                  aria-label="Puntuación por dimensión"
+                ></ul>
+              </div>
+            </section>
+            <div
+              class="results-grid"
+              id="results-grid"
+              aria-label="Puntuaciones por dimensión"
+            ></div>
+            <p class="results-note">
+              La barra representa la puntuación dentro de su intervalo posible;
+              no es un percentil ni indica por sí sola un nivel clínico. La
+              clave original del reactivo 182 se corrigió de 3 a 4 para mantener
+              la escala de respuestas.
+            </p>
+            <button
+              class="primary-button print-report-button"
+              id="print-report"
+              type="button"
+            >
+              Guardar informe PDF <span aria-hidden="true">↓</span>
+            </button>
+            <button class="secondary-button" id="restart-test" type="button">
+              Volver a empezar <span aria-hidden="true">↺</span>
+            </button>
+          </div>
         </div>
-    </div>
-</body>
+      </section>
+
+      <section class="model-section" id="modelo" aria-labelledby="model-title">
+        <div class="page-width model-content">
+          <div class="section-intro">
+            <p class="eyebrow">
+              <span class="eyebrow-rule" aria-hidden="true"></span>El modelo
+            </p>
+            <h2 id="model-title">Comprender sin<br />simplificar.</h2>
+          </div>
+          <div class="section-detail">
+            <p>
+              El modelo considera cinco dimensiones amplias y sus distintos
+              matices. No reduce a una persona a una etiqueta: sus resultados
+              requieren contexto y una interpretación profesional.
+            </p>
+            <a class="text-link" href="#uso"
+              >Principios de uso <span aria-hidden="true">↗</span></a
+            >
+          </div>
+        </div>
+      </section>
+
+      <section
+        class="responsible-section page-width"
+        id="uso"
+        aria-labelledby="use-title"
+      >
+        <div class="responsible-mark" aria-hidden="true">
+          <span></span><span></span>
+        </div>
+        <div>
+          <p class="eyebrow">Antes de utilizarlo</p>
+          <h2 id="use-title">Rigor en cada etapa.</h2>
+          <p>
+            Esta página es una interfaz informativa, no una evaluación
+            psicológica. Para habilitar la aplicación digital es necesario
+            integrar y verificar el cuestionario, su sistema de puntuación y las
+            condiciones de uso correspondientes.
+          </p>
+        </div>
+        <span class="responsible-index">01 — 03</span>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="brand footer-brand" href="#inicio"
+        ><span class="brand-mark" aria-hidden="true"
+          ><span></span><span></span><span></span></span
+        ><span>NEO <span class="brand-light">PI-R</span></span></a
+      >
+      <p>
+        No sustituye una evaluación ni el criterio de un profesional
+        cualificado.
+      </p>
+      <a class="back-top" href="#inicio" aria-label="Volver al inicio">↑</a>
+    </footer>
+  </body>
 </html>
